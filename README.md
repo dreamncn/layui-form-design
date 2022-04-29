@@ -1,12 +1,12 @@
 ## layui表单设计器
 <div align="center">
-<img src="https://www.swiftadmin.net/static/images/sademo/110400_6a5e130d_904542.png" width="100" height="100"/>
+<img src="https://cdn.jsdelivr.net/gh/dreamncn/picBed@master/uPic/2022_04_29_17_12_22_1651223542_1651223542509_CU55d2.png"  height="100"/>
 </div>
 <p align="center"><strong>价值源自分享</strong></p>
 
 <p align="center">
-   <a href="https://meystack.github.io/layui-form-design/" rel="nofollow" style="color:red;" >表单在线演示</a>
-	<a href="https://www.swiftadmin.net" target="_blank">SAPHP官方平台</a> 
+   <a href="https://dreamncn.github.io/layui-form-design/" rel="nofollow" style="color:red;" >表单在线演示</a>
+
 </p>
 
 > 简介
@@ -94,24 +94,12 @@
   })
 ```
 
+### 更新
 
-### 图片预览
----
-
-<table>
-    <tr>
-        <td><img src="https://www.swiftadmin.net/static/form/1.png"/></td>
-        <td><img src="https://www.swiftadmin.net/static/form/2.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://www.swiftadmin.net/static/form/3.png"/></td>
-        <td><img src="https://www.swiftadmin.net/static/form/33.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://www.swiftadmin.net/static/form/4.png"/></td>
-        <td><img src="https://www.swiftadmin.net/static/form/5.png"/></td>
-    </tr>	
-</table>
+- 2022-04-29
+  1. 删除在线模板
+  2. 修改导出为html
+  3. 更新README
 
 > 参与贡献<br/>
 > 欢迎Fork 本仓库有好的需求可以提交PR
