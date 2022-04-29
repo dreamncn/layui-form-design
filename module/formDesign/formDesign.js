@@ -531,7 +531,7 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
           return true;
         }
 
-        if ($(item).data('type') == 'space') {
+        if ($(item).data('type') === 'space') {
           return true;
         }
 
@@ -896,12 +896,10 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       that.checkSelectRadio(options.state.tag, $('#Propertie #name').val(), $(this).prev().val(), false);
     })
 
-    // 预览表单
-    $('body').on('click', '.layui-btn-component', function (e) {
-
+    function getHtml() {
       var othis = this, subHtml = STR_EMPTY,
-      formname = $('#formname').val(),
-      html = '<div class="layui-fluid"><form id="' + formname + '" class="layui-form">';
+          formname = $('#formname').val(),
+          html = '<div class="layui-fluid"><form id="' + formname + '" class="layui-form">';
       html += $('#formBuilder').html();
       html += '</form></div>';
       html = html.replace(/<ol[^>]+>/g, '').replace(/<\/ol>/g, '');
@@ -928,6 +926,12 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       } else {
         formHeight = '65%';
       }
+      return [formname,formWidth,formHeight,html];
+    }
+    // 预览表单
+    $('body').on('click', '.layui-btn-component', function (e) {
+
+      var [formname,formWidth,formHeight,html]  = getHtml();
 
       layer.open({
         type: 1,
@@ -956,8 +960,8 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
 
     // 导出表单
     $('body').on('click', '.layui-btn-export', function (e) {
-
-      $('#json-code').val(JSON.stringify(options.data, null, 4));
+      var [formname,formWidth,formHeight,html]  = getHtml();
+      $('#json-code').val(html);
       $('#import-code').addClass(STR_HIDE);
       $('#copy-code').removeClass(STR_HIDE);
       layer.open({

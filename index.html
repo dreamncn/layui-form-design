@@ -24,10 +24,10 @@
                 <div class="layui-col-md2">
                     <div class="layui-tab layui-tab-brief">
                         <ul class="layui-tab-title">
-                            <li class="layui-this">表单组件</ol>
-                            <li>表单模板</ol>
+                            <li class="layui-this">表单组件</li>
+                          <!--  <li>表单模板</li>-->
                         </ul>
-                        <div class="layui-tab-content" id="layui-form-attribute">
+                        <div class="layui-tab-content" >
                             <div class="layui-tab-item layui-form layui-show" >
                                 <div class="component">
                                     <div class="head">表单组件</div>
@@ -69,9 +69,9 @@
                                 </div>
                             </div>
                             <!-- // 加载远程表单模板 -->
-                            <div id="layui-form-template" class="layui-tab-item">
+                           <!-- <div id="layui-form-template" class="layui-tab-item">
                                 <div id="item-list" class="item-list"></div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -92,8 +92,8 @@
                 <div class="layui-col-md2" style="padding-top: 0;">
                     <div class="layui-tab layui-tab-brief">
                         <ul class="layui-tab-title">
-                            <li class="layui-this">组件属性</ol>
-                            <li>表单属性</ol>
+                            <li class="layui-this">组件属性</li>
+                            <li>表单属性</li>
                         </ul>
 
                         <div class="layui-tab-content" id="layui-form-attribute">
@@ -182,7 +182,7 @@ layui.config({
 	
 	console.log('success');
 	
-    layui.flow.load({
+  /*  layui.flow.load({
 		elem: '#item-list'
 		,done: function(page, next){
 			var list = [];
@@ -193,6 +193,6 @@ layui.config({
 				next(list.join(''), page < res.total );  
 			})
 		}
-    });
+    });*/
   })
 </script>
