@@ -531,7 +531,7 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
           return true;
         }
 
-        if ($(item).data('type') === 'space') {
+        if ($(item).data('type') == 'space') {
           return true;
         }
 
@@ -896,22 +896,16 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       that.checkSelectRadio(options.state.tag, $('#Propertie #name').val(), $(this).prev().val(), false);
     })
 
-    function getHtml() {
+    // 预览表单
+    $('body').on('click', '.layui-btn-component', function (e) {
+
       var othis = this, subHtml = STR_EMPTY,
-          formname = $('#formname').val(),
-          html = '<div class="layui-fluid"><form id="' + formname + '" class="layui-form">';
+      formname = $('#formname').val(),
+      html = '<div class="layui-fluid"><form id="' + formname + '" class="layui-form">';
       html += $('#formBuilder').html();
       html += '</form></div>';
       html = html.replace(/<ol[^>]+>/g, '').replace(/<\/ol>/g, '');
       html = html.replace(/<div class="layui-component-tools">.*?<\/div>/g, '');
-      // 获取提交代码
-      subHtml = html.substring(0, html.indexOf('</form>'));
-      subHtml += '<div class="layui-footer layui-form-item layui-center">';
-      subHtml += '<button class="layui-btn layui-btn-primary" type="button" sa-event="closeDialog">取消</button>';
-      subHtml += '<button class="layui-btn lay-submit" onclick="javascript:layer.msg(\'提交测试\');" type="button" >提交</button>';
-      subHtml += '</div>';
-      subHtml += html.substring(html.indexOf('</form>'));
-      html = subHtml;
 
       var formWidth = $('#formWidth').val();
       if (formWidth) {
@@ -926,12 +920,6 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       } else {
         formHeight = '65%';
       }
-      return [formname,formWidth,formHeight,html];
-    }
-    // 预览表单
-    $('body').on('click', '.layui-btn-component', function (e) {
-
-      var [formname,formWidth,formHeight,html]  = getHtml();
 
       layer.open({
         type: 1,
@@ -958,22 +946,48 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       })
     })
 
-    // 导出表单
+    // 导出表单JSON
     $('body').on('click', '.layui-btn-export', function (e) {
-      var [formname,formWidth,formHeight,html]  = getHtml();
-      $('#json-code').val(html);
+      var width = $("#formBuilder").width;
+      var height = $(window).height;
+      $('#json-code').val(JSON.stringify(options.data, null, 4));
       $('#import-code').addClass(STR_HIDE);
       $('#copy-code').removeClass(STR_HIDE);
       layer.open({
         type: 1
-        , offset: '130px'
+        , offset: '0'
         , content: $('.layui-htmlview')
-        , area: ['800px', '660px']
+        , area: [width, height]
         , shade: false
-        , resize: false
+        , resize: true
         , success: function (layero, index) { }
       });
     })
+
+    // 导出表单HTML
+    $('body').on('click', '.layui-btn-exportHTML', function (e) {
+      var width = $("#formBuilder").width;
+      var height = $(window).height;
+
+      $(".layui-component-tools").remove();
+      var code = $('#formBuilder').html();
+
+      var elem = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title> 标题 </title><link rel="stylesheet" href="/component/pear/css/pear.css" /><link rel="stylesheet" href="/admin/css/loader.css" /><link rel="stylesheet" href="/admin/css/admin.css" /></head><body class="pear-container"><from class="layui-form">${code}</from><script src="/component/layui/layui.js"></script><script src="/component/pear/pear.js"></script><script>//请编写逻辑代码</script></body></html>`;
+      console.log(elem);
+      $('#json-code').val(elem);
+      $('#import-code').addClass(STR_HIDE);
+      $('#copy-code').removeClass(STR_HIDE);
+      layer.open({
+        type: 1
+        , offset: '0'
+        , content: $('.layui-htmlview')
+        , area: [width, height]
+        , shade: false
+        , resize: true
+        , success: function (layero, index) { }
+      });
+    })
+
 
     // 复制代码
     $('body').on('click', '#copy-code', function (e) {

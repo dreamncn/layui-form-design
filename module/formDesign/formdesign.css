@@ -351,7 +351,7 @@ input:disabled {
 }
 
 #tpl_main,#tpl_right_main {
-    margin: 25% auto;
+    /* margin: 25% auto;S */
     text-align: center;
     font-size: 18px;
     color: #c9e0f3;

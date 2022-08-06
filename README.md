@@ -1,4 +1,3 @@
-
 <div align="center">
 <img src="https://cdn.jsdelivr.net/gh/dreamncn/picBed@master/uPic/2022_04_29_17_14_06_1651223646_1651223646347_QoqOWY.png"  height="100"/>
 </div>
@@ -14,7 +13,7 @@
 因维护自己的swiftadmin开源项目时需要一款基于layui的表单设计器，发现已有的开源项目并不太适合自己使用,<br/>
 所以只能重复造这个轮子了，主要用于在一键CURD过程中快速设计表单，自定义生成表单布局，支持远程<b>JSON</b>加载，并且代码简洁易懂！
 
-<a href="https://gitee.com/meystack/layui-form-design/"><img src="https://img.shields.io/badge/License-Apache-blue.svg" alt="swiftadmin"></a>
+<a href="https://gitee.com/meystack/layui-form-design/"><img src="https://pic.dreamn.cn/uPic/2022_08_06_13_59_10_1659765550_1659765550600_LhKnBc.svg" alt="swiftadmin"></a>
 <a href="https://gitee.com/meystack/layui-form-design/"><img src="https://img.shields.io/badge/Layui-2.7RC5-red.svg" alt="layui"></a>
 <a href="https://gitee.com/meystack/layui-form-design/"><img src="https://img.shields.io/badge/Sortable-1.14-brightgreen.svg" alt="thinkphp"></a>
 <a href="https://gitee.com/meystack/layui-form-design/stargazers"><img src="https://gitee.com/meystack/layui-form-design/badge/star.svg?theme=gvp" alt="star"></a>
@@ -112,5 +111,5 @@
 4. 不得对本软件进行恶意篡改或倒卖，不得对本软件进行二次包装后声称为自己的产品等，请尊重国家著作权法！
 5. 用户承诺接受并遵守本协议的约定。如果用户不同意本协议的约定，应立即停止使用。
    
-<font color="red">当您使用这款软件的时候，默认视为您同意上述条款</font>
 
+<font color="red">当您使用这款软件的时候，默认视为您同意上述条款</font>
