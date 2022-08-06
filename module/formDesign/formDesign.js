@@ -972,7 +972,7 @@ layui.define(['form', 'jquery', 'layer', 'cascader', 'tags'], function (exports)
       $(".layui-component-tools").remove();
       var code = $('#formBuilder').html();
 
-      var elem = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title> 标题 </title><link rel="stylesheet" href="/component/pear/css/pear.css" /><link rel="stylesheet" href="/admin/css/loader.css" /><link rel="stylesheet" href="/admin/css/admin.css" /></head><body class="pear-container"><from class="layui-form">${code}</from><script src="/component/layui/layui.js"></script><script src="/component/pear/pear.js"></script><script>//请编写逻辑代码</script></body></html>`;
+      var elem = `<from class="layui-form">${code}</from>`;
       console.log(elem);
       $('#json-code').val(elem);
       $('#import-code').addClass(STR_HIDE);

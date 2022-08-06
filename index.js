@@ -18,16 +18,5 @@ layui.config({
 
     console.log('success');
 
-    layui.flow.load({
-        elem: '#item-list'
-        , done: function (page, next) {
-            var list = [];
-            $.get('//api.swiftadmin.net/form/?page=' + page, function (res) {
-                layui.each(res.data, function (index, item) {
-                    list.push(item);
-                });
-                next(list.join(''), page < res.total);
-            })
-        }
-    });
+
 })
